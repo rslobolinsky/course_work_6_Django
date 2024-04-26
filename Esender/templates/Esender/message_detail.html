@@ -1,0 +1,26 @@
+{% extends "Esender/base.html" %}
+{% block content %}
+<div class="col-12">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h3 class="display-3">Сообщение № {{ object.pk }}</h3>
+    </div>
+</div>
+
+<div class="col-12 text-center">
+    <table class="table table-striped">
+        <tr>
+            <th>Заголовок</th>
+            <th>Текст сообщения</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><h4>{{ object.title }}</h4></td>
+            <td><h4>{{ object.body }}</h4></td>
+        </tr>
+    </table>
+    <div class="center">
+        <a class="btn btn-outline-primary btn-lg" href="{% url 'Esender:messages' %}">Вернуться
+        на главную страницу</a>
+    </div>
+</div>>
+{% endblock %}

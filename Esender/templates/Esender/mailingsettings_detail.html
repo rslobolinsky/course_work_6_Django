@@ -1,0 +1,27 @@
+{% extends "Esender/base.html" %}
+{% block content %}
+<div class="col-12">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h3 class="display-3">Рассылка № {{ object.pk }}</h3>
+    </div>
+</div>
+
+<div class="col-12 text-center">
+    <table class="table table-striped">
+        <tr>
+            <th>Дата и время первой рассылки</th>
+            <th>Периодичность рассылки</th>
+            <th>Статус</th>
+        </tr>
+        <tr>
+            <td><h4>{{ object.date_and_time }}</h4></td>
+            <td><h4>{{ object.period }}</h4></td>
+            <td><h4>{{ object.status }}</h4></td>
+
+        </tr>
+    </table>
+    <div class="center">
+        <a class="btn btn-outline-primary btn-lg" href="{% url 'Esender:settings' %}">Вернуться
+        на главную страницу</a>
+    </div>
+{% endblock %}

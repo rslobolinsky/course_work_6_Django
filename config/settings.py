@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_apscheduler',
 
-    'ESender',
+    'Esender',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +76,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Course_work_6_Django',
+        'NAME': 'course_work_6_Django',
         'USER': 'postgres',
-        'PASSWORD': '1234'
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

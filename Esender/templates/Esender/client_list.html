@@ -1,0 +1,40 @@
+{% extends "Esender/base.html" %}
+{% block content %}
+<div class="ricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="center">
+        Список имеющихся клиентов
+    </h1>
+    {% for object in object_list %}
+    <div class="col-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <tr>
+                    <th><h6>ФИО клиента: {{ object.name }}</h6></th>
+                    <th><h6>email клиента: {{ object.email }}</h6></th>
+                    <p class="card-text">{{ object.comments }}</p>
+                </tr>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a type="button" class="btn btn-sm btn-outline-success"
+                           href="{% url 'Esender:client-detail' object.pk %}">Просмотр</a>
+                        <a type="button" class="btn btn-sm btn-outline-warning"
+                           href="{% url 'Esender:update' object.pk %}">Редактирование</a>
+                        <a type="button" class="btn btn-sm btn-outline-danger"
+                           href="{% url 'Esender:delete-client' object.pk %}">Удаление</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="row text-right mt-4">
+    <div class="col-12">
+        <a class="p-2 btn btn-outline-primary btn-block btn-lg" href="{% url 'Esender:create-client' %}">Создать
+            нового клиента</a>
+    </div>
+</div>
+{% endblock %}
+
+
+

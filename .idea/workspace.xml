@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="835d37c3-c8fc-4803-9c7b-df1dc97bcf9c" name="Changes" comment="Add settings to the project">
+      <change afterPath="$PROJECT_DIR$/.idea/course_work_6_Django.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/scripts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/client_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/client_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/client_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/client_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/includes/inc_main_menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/mailingsettings_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/mailingsettings_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/mailingsettings_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/mailingsettings_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/message_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/message_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/message_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/templates/Esender/message_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Esender/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESender/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Esender/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESender/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Esender/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESender/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Esender/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESender/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Esender/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESender/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Esender/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESender/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Esender/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESender/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Esender/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rslobolinsky&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rslobolinsky/course_work_6_Django.git&quot;,
+    &quot;accountId&quot;: &quot;07b188b7-adb8-4c30-9a4d-daa565d15b23&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2fab0yU7nfabXlaRnhf1a97c6ve" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/Roman/Desktop/it/course_work_6_Django/Esender/templates/Esender",
+    "settings.editor.selected.configurable": "promo.database"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Esender/templates/Esender" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="835d37c3-c8fc-4803-9c7b-df1dc97bcf9c" name="Changes" comment="" />
+      <created>1714041917992</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714041917992</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Create App Esender">
+      <option name="closed" value="true" />
+      <created>1714042635043</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714042635043</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add settings to the project">
+      <option name="closed" value="true" />
+      <created>1714043246278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714043246278</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add settings to the project">
+      <option name="closed" value="true" />
+      <created>1714043276312</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714043276312</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create App Esender" />
+    <MESSAGE value="Add settings to the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add settings to the project" />
+  </component>
+</project>
