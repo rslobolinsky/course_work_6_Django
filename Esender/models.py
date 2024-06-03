@@ -1,5 +1,8 @@
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+
+from users.models import User
 
 NULLABLE = {'blank': True, 'null': True}
 
@@ -10,6 +13,7 @@ class Client(models.Model):
     email = models.EmailField(max_length=150, unique=True, verbose_name='Почта')
     name = models.CharField(max_length=100, verbose_name='ФИО')
     comments = models.TextField(verbose_name='Комментарий', **NULLABLE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Владелец', null=True)
 
     def __str__(self):
         return f'{self.name}, {self.email}'
@@ -21,7 +25,7 @@ class Client(models.Model):
 
 class Message(models.Model):
     title = models.CharField(max_length=150, verbose_name='Заголовок')
-    body = models.TextField(verbose_name='Текс сообщения', **NULLABLE)
+    body = models.TextField(verbose_name='Текст сообщения', **NULLABLE)
 
     def __str__(self):
         return f'{self.title}, {self.body[:50]}...'
@@ -32,10 +36,6 @@ class Message(models.Model):
 
 
 class MailingSettings(models.Model):
-    """Класс рассылки, поля дата и время, периодичность(раз в день, раз в неделю, раз в месяц),
-    статус рассылки(завершена, создана, запущена)
-    """
-
     class PeriodMailingSettings(models.TextChoices):
         ONE_DAY = "Раз в день", _("Раз в день")
         ONE_WEEK = "Раз в неделю", _("Раз в неделю")
@@ -46,33 +46,39 @@ class MailingSettings(models.Model):
         CREATED = "Создана", _("Создана")
         COMPLETED = "Завершена", _("Завершена")
 
-    date_and_time = models.DateField(verbose_name='Дата и время первой рассылки')
+    create_date = models.DateField(default=timezone.now, verbose_name='Дата создания рассылки')
     period = models.CharField(max_length=50, choices=PeriodMailingSettings, verbose_name='Периодичность рассылки')
     status = models.CharField(max_length=50, choices=StatusMailingSettings, verbose_name='Статус')
     client = models.ManyToManyField(Client, verbose_name='Клиенты рассылки')
     message = models.ForeignKey(Message, verbose_name='Сообщения', on_delete=models.CASCADE, related_name='Message')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Владелец рассылки', null=True)
 
     def __str__(self):
-        return f'{self.date_and_time},{self.period}, {self.status}, {self.client}'
+        return f'{self.create_date},{self.period}, {self.status}, {self.client}'
 
     class Meta:
         verbose_name = 'Настройка рассылки'
         verbose_name_plural = 'Настройки рассылки'
+        permissions = [
+            ("set_deactivate", "Can deactivate mailing"),
+            ("view_all_mailings", "Can view all mailing"),
+        ]
 
 
 class Logs(models.Model):
-    """Модель попытки рассылки, поля: дата и время последней рассылки, статус(успешно/не успешно)
-    ответ почтового сервера, если он был
-    """
-    date = models.DateField(verbose_name='Дата и время последней рассылки', auto_now_add=True)
-    status = models.BooleanField(verbose_name='Статус рассылки')
-    server_response = models.CharField(verbose_name='Ответ почтового сервера', **NULLABLE)
-    message = models.ForeignKey(Message, verbose_name='Сообщение', on_delete=models.CASCADE)
+    TRY_STATUS_TO_SEND = [
+        ("success", "Успешно"),
+        ("fail", "Не успешно"),
+    ]
 
-    # client = models.ForeignKey(Client, verbose_name='клиент', on_delete=models.CASCADE)
+    date = models.DateField(verbose_name='Дата и время последней рассылки', auto_now_add=True)
+    status = models.CharField(max_length=50, choices=TRY_STATUS_TO_SEND, verbose_name='Статус рассылки')
+    server_response = models.CharField(verbose_name='Ответ почтового сервера', **NULLABLE)
+    mailing_settings = models.ForeignKey(MailingSettings, verbose_name='Настройка рассылки', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.date}, {self.status}'
+        return f'{self.mailing_settings}, {self.date}, {self.status}, {self.user}'
 
     class Meta:
         verbose_name = 'Лог'

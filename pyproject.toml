@@ -18,6 +18,8 @@ django-apscheduler = "^0.6.2"
 django-crontab = "^0.7.1"
 python-dotenv = "^1.0.1"
 psycopg2-binary = "^2.9.9"
+redis = "^5.0.4"
+flake8 = "^7.0.0"
 
 
 [build-system]
