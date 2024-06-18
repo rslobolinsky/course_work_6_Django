@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_apscheduler',
     'django_crontab',
+    'crispy_forms',
+    'crispy_bootstrap4',
 
     'Esender',
     'users',
@@ -83,9 +85,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        "NAME": os.getenv("POSTGRES_DB"),
-        "USER": os.getenv("POSTGRES_USER"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "NAME": 'course_work_6',
+        "USER": 'postgres',
+        "PASSWORD": 12345,
     }
 }
 
@@ -158,3 +160,6 @@ if CACHE_ENABLED:
             "LOCATION": "redis://127.0.0.1:6379",
         }
     }
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"

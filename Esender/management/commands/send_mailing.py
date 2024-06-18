@@ -6,6 +6,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from django.core.mail import send_mail
 from django.core.management import BaseCommand
 from django.db.models import F
+from django_apscheduler.jobstores import DjangoJobStore
 
 from config import settings
 from Esender.models import Logs, MailingSettings, Message
@@ -37,19 +38,19 @@ class Command(BaseCommand):
                     mailing.period == MailingSettings.PeriodMailingSettings.ONE_DAY
                     and current_datetime.day >= 1
                 ):
-                    mailing.send_time = F("send_time") + timedelta(days=1)
+                    mailing.sent_time = F("sent_time") + timedelta(days=1)
                     mailing.status = MailingSettings.StatusMailingSettings.STARTED
                 elif (
                     mailing.period == MailingSettings.PeriodMailingSettings.ONE_WEEK
                     and current_datetime.day >= 7
                 ):
-                    mailing.send_time = F("send_time") + timedelta(days=7)
+                    mailing.sent_time = F("sent_time") + timedelta(days=7)
                     mailing.status = MailingSettings.StatusMailingSettings.STARTED
                 elif (
                     mailing.period == MailingSettings.PeriodMailingSettings.ONE_MONTH
                     and current_datetime.day >= 30
                 ):
-                    mailing.send_time = F("send_time") + timedelta(days=30)
+                    mailing.sent_time = F("sent_time") + timedelta(days=30)
                     mailing.status = MailingSettings.StatusMailingSettings.STARTED
                 mailing.save()
                 status = True
@@ -59,7 +60,7 @@ class Command(BaseCommand):
                 server_response = str(e)
             finally:
                 Logs.objects.create(
-                    mailing=mailing,
+                    mailing_settings=mailing,
                     status=status,
                     server_response=server_response,
                 )
@@ -67,5 +68,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options) -> None:
         """Запускает APScheduler."""
         scheduler = BackgroundScheduler()
+        scheduler.add_jobstore(DjangoJobStore(), "default")
         scheduler.add_job(self.send_mailing, "interval", seconds=10)
         scheduler.start()
+

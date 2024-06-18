@@ -114,9 +114,9 @@ class MessageListView(ListView):
 
     def get_queryset(self):
         if self.request.user.is_superuser:
-            return Client.objects.all()
+            return Message.objects.all()
         else:
-            return Client.objects.filter(owner=self.request.user)
+            return Message.objects.filter(owner=self.request.user)
 
 
 class MessageDetailView(LoginRequiredMixin, DetailView):
